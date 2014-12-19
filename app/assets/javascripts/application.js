@@ -17,4 +17,4 @@
 //= require bootstrap/dropdown
 //= require bootstrap/alert
 //= require underscore
-//= require gmaps/google
+

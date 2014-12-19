@@ -2,9 +2,7 @@ Rails.application.routes.draw do
 
   
 
-  resources :stores
-
-  resources :maps
+ 
 
 namespace :account do
     resources :groups
