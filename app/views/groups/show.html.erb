@@ -1,0 +1,43 @@
+<div class="col-md-12">
+  
+  <h2> <%= @group.title %> </h2>
+  <p> <%= @group.description %> </p> 
+  <div class="group">
+  <%= link_to("留言", new_group_post_path(@group) , :class => "btn btn-warning pull-left")%>
+    <%= link_to("修改", edit_group_path(@group) , :class => "btn btn-primary pull-left")%> 
+
+  </div>
+</div>
+
+<div class='col-md-4'>
+<table class="table">
+    <thead>
+      <tr>
+        <th>留言</th>
+         <th>留言人</th>
+        <th colspan="2"></th>
+       
+      </tr>
+
+    </thead>
+    <tbody>
+      <% @posts.each do |post| %> 
+        <tr>
+          <td> <%= post.content %> </td>
+           <td> <%= current_user.name %> </td>
+           <td> <% post.group_id %> </td>
+
+          <td> <% link_to("Edit", 
+                           edit_group_post_path(post.group, post), 
+                           :class => "btn btn-default btn-xs")%>
+
+               <%= link_to("Delete", 
+                           group_post_path(post.group, post), 
+                           :class => "btn btn-primary btn-xs ",
+                           :method => :delete,
+                           data: { confirm: "Are you sure?" } )%></td>
+        </tr>
+      <% end %> 
+    </tbody>
+  </table>
+  </div>

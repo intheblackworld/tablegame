@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gamename: MyString
+  count: 1
+
+two:
+  gamename: MyString
+  count: 1

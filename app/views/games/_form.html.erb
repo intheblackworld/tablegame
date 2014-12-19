@@ -1,0 +1,30 @@
+<%= simple_form_for(@game) do |f| %>
+  <% if @game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+      <ul>
+      <% @game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="container">
+    <div class="row">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4">
+    <%= f.input :gamename ,:input_html =>{:class => 'form-control' , :placeholder => '輸入名字'}%> <br>
+<div class="col-md-4 col-md-offset-10">
+
+      <%= f.submit ' 完成 ', :class => "btn btn-primary"  %>
+</div>
+    </div>
+    <div class="col-md-4">
+    </div>
+    </div>
+    </div>
+    
+<% end %>

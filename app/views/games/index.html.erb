@@ -1,0 +1,29 @@
+<h1>桌遊列表</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>桌遊</th>
+      <th>數量</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+<% @games.each do |game| %>
+  <tr>
+    <td><%= game.gamename %></td>
+    
+    <td><%= pluralize(game.counts.count, "") %></td>
+    <td><%= button_to '+1', upvote_game_path(game), method: :post %></td>
+    <td><% link_to 'Show', game %></td>
+    
+    <td><%= link_to '刪除', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+<h1></h1>
+ </tbody>
+</table>
+
+<br>
+
+<%= link_to '新增桌遊', new_game_path %>

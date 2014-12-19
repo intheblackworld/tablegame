@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<div class = "col-md-4">
+</div>
+<p>
+<div class = "col-md-4">
+
+  <strong>桌遊:</strong>
+  <%= @game.gamename %>
+</p>
+</div>
+<p>
+  <strong></strong>
+  <%=  %>
+</p>
+
+<% link_to '修改', edit_game_path(@game) %> |
+<%= link_to '回桌遊列表', games_path %>
